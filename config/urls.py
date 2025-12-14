@@ -9,10 +9,8 @@ urlpatterns = [
     # API endpoints
     path('api/v1/', include('users.urls')),
     path('api/v1/', include('courses.urls')),
-    path('api/v1/', include('lessons.urls')),
-    
-    # DRF аутентификация
     path('api-auth/', include('rest_framework.urls')),
+    path('api/v1/', include('users.urls')),
 ]
 
 if settings.DEBUG:

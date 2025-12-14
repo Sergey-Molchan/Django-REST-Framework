@@ -1,8 +1,10 @@
 from rest_framework import viewsets, generics
 from rest_framework.permissions import AllowAny
-from .models import Course, Lesson
-from .serializers import CourseSerializer
+
 from lessons.serializers import LessonSerializer
+from .models import Course
+from lessons.models import Lesson
+from .serializers import CourseSerializer
 
 
 # 1. ViewSet для курсов (как в задании)

@@ -1,7 +1,7 @@
+# lessons/models.py - ИСПРАВЛЕННАЯ ВЕРСИЯ
 from django.db import models
 from django.conf import settings
-from courses.models import Course
-
+# УДАЛИ ЭТУ СТРОКУ: from courses.models import Course (она больше не нужна)
 
 class Lesson(models.Model):
     """Модель урока"""
@@ -26,8 +26,9 @@ class Lesson(models.Model):
         verbose_name='Ссылка на видео'
     )
 
+
     course = models.ForeignKey(
-        Course,
+        'courses.Course',
         on_delete=models.CASCADE,
         related_name='lessons',
         verbose_name='Курс'
