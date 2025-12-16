@@ -3,9 +3,7 @@ from .models import Course
 
 
 class CourseSerializer(serializers.ModelSerializer):
-    """Сериализатор для курса"""
 
-    # Показываем количество уроков в курсе
     lessons_count = serializers.SerializerMethodField()
 
     class Meta:

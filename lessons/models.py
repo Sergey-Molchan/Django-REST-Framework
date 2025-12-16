@@ -1,7 +1,6 @@
-# lessons/models.py - ИСПРАВЛЕННАЯ ВЕРСИЯ
 from django.db import models
 from django.conf import settings
-# УДАЛИ ЭТУ СТРОКУ: from courses.models import Course (она больше не нужна)
+
 
 class Lesson(models.Model):
     """Модель урока"""

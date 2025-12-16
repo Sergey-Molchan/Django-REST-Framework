@@ -38,7 +38,7 @@ class LessonRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [AllowAny]
 
 
-# 3. АЛЬТЕРНАТИВА: Можно сделать отдельные классы для каждой операции
+
 
 class LessonListAPIView(generics.ListAPIView):
     """Только список уроков"""
