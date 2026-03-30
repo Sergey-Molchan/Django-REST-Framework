@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     "users",
     "courses",
     'lessons',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -86,6 +87,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.OrderingFilter',
+    ]
+}
 
 AUTH_USER_MODEL = "users.User"
 

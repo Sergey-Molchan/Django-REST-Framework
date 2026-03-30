@@ -8,4 +8,5 @@ router.register(r'users', UserViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('payments/', PaymentListAPIView.as_view(), name='payment-list'),
 ]
