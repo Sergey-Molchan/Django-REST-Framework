@@ -8,6 +8,9 @@ from rest_framework.filters import OrderingFilter
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import serializers
 from .models import Payment
+from rest_framework_simplejwt.views import TokenObtainPairView
+from .serializers import MyTokenObtainPairSerializer
+
 
 
 class PaymentSerializer(serializers.ModelSerializer):
@@ -52,3 +55,8 @@ class PaymentListAPIView(generics.ListAPIView):
     filterset_fields = ['course', 'lesson', 'payment_method']
     ordering_fields = ['payment_date']
     ordering = ['-payment_date']
+
+
+class MyTokenObtainPairView(TokenObtainPairView):
+    """Эндпоинт для получения JWT токена"""
+    serializer_class = MyTokenObtainPairSerializer

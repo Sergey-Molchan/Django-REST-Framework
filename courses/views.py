@@ -1,5 +1,5 @@
 from rest_framework import viewsets, generics
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
 
 from lessons.serializers import LessonSerializer
 from .models import Course
@@ -23,7 +23,7 @@ class LessonListCreateAPIView(generics.ListCreateAPIView):
     """Generic класс: список уроков + создание"""
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
